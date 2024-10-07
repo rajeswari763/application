@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Launch EC2 instance
+      ec2:
+        key_name: "{{ Test}}"
+        instance_type: t2.micro
+        image: ami-086918d8178bfe266
+        region: us-east-1
+        count: 1
+        assign_public_ip: yes
+      register: ec2
+    - debug:
+        var: ec2

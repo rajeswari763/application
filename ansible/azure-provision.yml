@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create Azure VM
+      azure_rm_virtualmachine:
+        name: "MyVM"
+        resource_group: "myresourcegroup"
+        admin_username: "azureuser"
+        admin_password: "Rajeswari@1998"
+        vm_size: "Standard_B1s"
+        image:
+          offer: "UbuntuServer"
+          publisher: "Canonical"
+          sku: "16.04-LTS"
+          version: "latest"
